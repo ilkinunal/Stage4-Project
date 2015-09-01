@@ -6,10 +6,11 @@ threadsafe: true
 
 # [START handlers]
 handlers:
-- url: .*
-  script: templates.app
 - url: /notes
   static_dir: notes
+- url: .*
+  script: templates.app
+
 # [END handlers]
 
 # [START libraries]
