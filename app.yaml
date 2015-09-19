@@ -6,8 +6,13 @@ threadsafe: true
 
 # [START handlers]
 handlers:
+<<<<<<< HEAD
 - url: /css
   static_dir: css
+=======
+- url: /notes
+  static_dir: notes
+>>>>>>> origin/master
 - url: .*
   script: templates.app
 

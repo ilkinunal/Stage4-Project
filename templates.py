@@ -4,9 +4,16 @@ import os
 import time
 from google.appengine.ext import ndb
 
+<<<<<<< HEAD
 
 template_dir = os.path.join(os.path.dirname(__file__), 'notes')
 JINJA_ENVIRONMENT = jinja2.Environment( loader=jinja2.FileSystemLoader(template_dir), extensions=['jinja2.ext.autoescape'], autoescape=True)
+=======
+JINJA_ENVIRONMENT = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__), "notes"),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
+>>>>>>> origin/master
 
 class Handler(webapp2.RequestHandler): 
     """
