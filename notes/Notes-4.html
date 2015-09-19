@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>ilkin&#39;s webpage</title>
-    <link rel="stylesheet" type="text/css" href="Notes-4.css">
+    <link rel="stylesheet" type="text/css" href="css/Notes-4.css">
 </head>
  
 <body>
@@ -470,14 +470,14 @@
           {% for post in posts %}
             <div class="submitted">
               <div class="submitted_user">
-                {% if input_user %}
-                <strong> {{input_user}} </strong> wrote:
+                {% if post.user %}
+                <strong> {{post.user}} </strong> wrote:
                 {% else %}
                 <strong> Anonymous User </strong> wrote:
                 {% endif %}
               </div>
               <div class="submitted_comment">
-                <blockquote> {{input_comment"}} </blockquote>
+                <blockquote> {{post.comment}} </blockquote>
               </div>
             </div>
           {% endfor %}
@@ -485,8 +485,9 @@
           <br>There are no comments.
           {% endif %}
       </div>
+    </div>
+  </form>
   </div>
-
 
 </body>
 </html>
