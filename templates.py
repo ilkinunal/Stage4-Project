@@ -50,7 +50,7 @@ class MainPageComments(webapp2.RequestHandler):
         for usercomment in query:
             user = usercomment.user
             comment = usercomment.comment
-    self.response.out.write(user, comment)
+            self.response.out.write(user, comment)
 
     def post(self):
         user = self.request.get('user')
