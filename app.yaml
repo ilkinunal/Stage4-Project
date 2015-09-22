@@ -12,7 +12,6 @@ handlers:
   static_dir: notes
 - url: .*
   script: templates.app
-
 # [END handlers]
 
 # [START libraries]
