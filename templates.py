@@ -32,11 +32,11 @@ class UserComment(ndb.Model):
     comment = ndb.StringProperty()
     date = ndb.DateTimeProperty(auto_now_add=True)
 
-def user_key(user): 
-    return ndb.Key('User', user)
+    def user_key(user): 
+        return ndb.Key('User', user)
 
-def comment_key(comment): 
-    return ndb.Key('Comment', comment)
+    def comment_key(comment): 
+        return ndb.Key('Comment', comment)
 
 class MainPageComments(webapp2.Handler):
     def get(self):
