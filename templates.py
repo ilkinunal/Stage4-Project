@@ -27,17 +27,20 @@ class Handler(webapp2.RequestHandler):
         "Write the jinja template to the website"
         self.write(self.render_str(template, **kw))
 
-class MainHandler(Handler):
-    def get(self):
-        self.render("Notes-4.html")
-
 class UserComment(ndb.Model):
     user = ndb.StringProperty()
     comment = ndb.StringProperty()
     date = ndb.DateTimeProperty(auto_now_add=True)
 
-class MainPageComments(webapp2.RequestHandler):
+def user_key(user): 
+    return ndb.Key('User', user)
+
+def comment_key(comment): 
+    return ndb.Key('Comment', comment)
+
+class MainPageComments(webapp2.Handler):
     def get(self):
+        self.render("Notes-4.html")
         error = self.request.get('error','')
         query = UserComment.query().order(UserComment.date)
         usercomment_list = query.fetch(10)
@@ -60,6 +63,5 @@ class MainPageComments(webapp2.RequestHandler):
             self.redirect('/?error=Please fill out the name and comment sections!')
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler), ('/', MainPageComments)
+    ('/', MainPageComments)
 ], debug=True)
-
