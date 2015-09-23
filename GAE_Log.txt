@@ -1,0 +1,30 @@
+2015-09-22 21:45:41 Running command: "['C:\\Python27\\pythonw.exe', 'C:\\Program Files\\Google\\google_appengine\\dev_appserver.py', '--skip_sdk_update_check=yes', '--port=16080', '--admin_port=8008', 'C:\\ilkin-personal\\UDACITY\\Projects\\Project4\\Stage4-Project']"
+INFO     2015-09-22 21:45:43,726 devappserver2.py:763] Skipping SDK update check.
+INFO     2015-09-22 21:45:43,861 api_server.py:205] Starting API server at: http://localhost:53929
+INFO     2015-09-22 21:45:43,865 dispatcher.py:197] Starting module "default" running at: http://localhost:16080
+INFO     2015-09-22 21:45:43,868 admin_server.py:118] Starting admin server at: http://localhost:8008
+INFO     2015-09-22 21:46:12,565 module.py:442] [default] Detected file changes:
+  templates.pyc
+ERROR    2015-09-23 01:46:13,298 wsgi.py:263] 
+
+Traceback (most recent call last):
+
+  File "C:\Program Files\Google\google_appengine\google\appengine\runtime\wsgi.py", line 240, in Handle
+
+    handler = _config_handle.add_wsgi_middleware(self._LoadHandler())
+
+  File "C:\Program Files\Google\google_appengine\google\appengine\runtime\wsgi.py", line 299, in _LoadHandler
+
+    handler, path, err = LoadObject(self._handler)
+
+  File "C:\Program Files\Google\google_appengine\google\appengine\runtime\wsgi.py", line 85, in LoadObject
+
+    obj = __import__(path[0])
+
+  File "C:\ilkin-personal\UDACITY\Projects\Project4\Stage4-Project\templates.py", line 41, in <module>
+
+    class MainPageComments(webapp2.Handler):
+
+AttributeError: 'module' object has no attribute 'Handler'
+
+INFO     2015-09-22 21:46:13,312 module.py:809] default: "GET / HTTP/1.1" 500 -
