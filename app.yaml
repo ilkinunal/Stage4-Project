@@ -8,10 +8,11 @@ threadsafe: true
 handlers:
 - url: /css
   static_dir: css
-- url: /notes
-  static_dir: notes
+#- url: /notes
+#  static_dir: notes
 - url: .*
   script: templates.app
+
 # [END handlers]
 
 # [START libraries]
