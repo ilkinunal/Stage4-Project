@@ -38,7 +38,7 @@ class UserComment(ndb.Model):
     def comment_key(comment): 
         return ndb.Key('Comment', comment)
 
-class MainPageComments(webapp2.Handler):
+class MainPageComments(Handler):
     def get(self):
         self.render("Notes-4.html")
         error = self.request.get('error','')
