@@ -442,7 +442,6 @@
 
   <div id="linkcomments">
   <h2>***COMMENTs</h2>
-  <form>
     <div class="comments">
       <div class="input">
         <br>
@@ -466,18 +465,18 @@
       <div class="output">
         <b>Submitted Comments</b>
         <hr>
-          {% if posts %}
-          {% for post in posts %}
+          {% if usercomments %}
+          {% for usercomment in usercomments %}
             <div class="submitted">
               <div class="submitted_user">
-                {% if post.user %}
-                <strong> {{post.user}} </strong> wrote:
+                {% if usercomment.user %}
+                <strong> {{usercomment.user}} </strong> wrote:
                 {% else %}
                 <strong> Anonymous User </strong> wrote:
                 {% endif %}
               </div>
               <div class="submitted_comment">
-                <blockquote> {{post.comment}} </blockquote>
+                <blockquote> {{usercomment.comment}} </blockquote>
               </div>
             </div>
           {% endfor %}
@@ -486,7 +485,6 @@
           {% endif %}
       </div>
     </div>
-  </form>
   </div>
 
 </body>
