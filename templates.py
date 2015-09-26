@@ -40,23 +40,20 @@ class UserComment(ndb.Model):
 
 class MainPageComments(Handler):
     def get(self):
-        self.render("Notes-4.html")
         error = self.request.get('error','')
         query = UserComment.query().order(UserComment.date)
         usercomment_list = query.fetch(10)
 
-        for usercomment in query:
-            user = usercomment.user
-            comment = usercomment.comment
-            self.response.out.write(user, comment)
+        self.render("Notes-4.html", 
+            usercomments = usercomment_list)
 
     def post(self):
         user = self.request.get('user')
         comment = self.request.get('comment')
 
-        if user and comment:
-            usercomment = UserComment(user=user, comment=comment)
-            usercomment.put()
+        if comment:
+            usercomments = UserComment(user=user, comment=comment)
+            usercomments.put()
             time.sleep(.1)
             self.redirect('/')
         else:
